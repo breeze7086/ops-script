@@ -36,7 +36,7 @@ def rotate_logs():
                     file_prefix = 'lobby'
                 if file_date:
                     if int(current_date[-4:-2]) - int(file_date[-4:-2]) == 1:
-                        if MONTH_DEADLINE[int(current_month) - 1] - int(file_date[-2:]) + int(current_date[-2:]) > ROTATE_DAYS:
+                        if MONTH_DEADLINE[int(file_date[-4:-2]) - 1] - int(file_date[-2:]) + int(current_date[-2:]) > ROTATE_DAYS:
                             newest_file = get_dir_newest_file(fullpath_file, file_prefix)
                             if os.path.getsize(newest_file) >= 524288000:
                                 cmd = 'echo "" > ' + newest_file
@@ -62,7 +62,7 @@ def rotate_logs():
                     file_suffix = '.txt'
                 if file_date:
                     if int(current_date[-4:-2]) - int(file_date[-4:-2]) == 1:
-                        if MONTH_DEADLINE[int(current_month) - 1] - int(file_date[-2:]) + int(current_date[-2:]) > ROTATE_DAYS:
+                        if MONTH_DEADLINE[int(file_date[-4:-2]) - 1] - int(file_date[-2:]) + int(current_date[-2:]) > ROTATE_DAYS:
                             newest_file = get_dir_newest_file(fullpath_file, file_suffix)
                             if os.path.getsize(newest_file) >= 524288000:
                                 cmd = 'echo "" > ' + newest_file
