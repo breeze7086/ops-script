@@ -92,7 +92,7 @@ def get_dir_newest_file(fullpath_filename, match_str):
             if newest_file_time < file_ctime:
                 newest_file_time = file_ctime
                 newest_file = path + filename
-                return newest_file
+    return newest_file
 
 if __name__ == '__main__':
     rotate_logs()
